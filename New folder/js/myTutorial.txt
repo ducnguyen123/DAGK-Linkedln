@@ -1,0 +1,14 @@
+var myArray = [
+{
+"Name": "Current",
+"Status": "Linkedln,Intut,DonorsChoose"
+},
+{
+"Name": "Current",
+"Status": "Linkedln,Intut,DonorsChoose"
+},
+{
+"Name": "Current",
+"Status": "Linkedln,Intut,DonorsChoose"
+}
+]

@@ -1,0 +1,26 @@
+var xmlhttp = new XMLHttpRequest();
+var url ="myTutorial.txt"
+
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        
+        myFunction(xmlhttp.responseText);
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(response){
+	var arr = JSON.parse(response);
+	var i;
+	var out ="<table>";
+	
+	for (i =0;i < arr.length;i++){
+	out += "<tr><td>" + arr[i].Name + arr[i].Status + "</tr></td>";
+	}
+	out += "</table>";
+	document.getElementById("test1").innerHTML = out;
+	
+}
+	
+	

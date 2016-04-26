@@ -1,0 +1,26 @@
+.profile-card  {
+	width: 650px;
+	height: 240px;
+	
+}
+
+.profile-picture {
+	width: 200px;
+	height:200px;
+	float: left;
+}
+
+.profile-overview {
+	width: 450px;
+	height: 230px;
+	float: left;
+}
+
+dt {
+	display: none;
+}
+
+.descriptor {
+	float: left;
+}
+
