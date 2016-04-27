@@ -15,5 +15,22 @@
 		"Name": "Education",
 		"Status": "University of Science"
 	}
-] }
+],
+
+"Background": [
+	{
+		"Content1": "My name is Nguyen Minh Duc.Currently,i learning at University of Science.My major is Software Engineering.",
+		"Content2": "Experienced in community activities, programming."
+		
+	}
+],
+"Info": [ 
+	{
+		"name": "Nguyen Minh Duc",
+		"school": "Student at University of Science",
+		"loca": "Di An",
+		"industry": "Internet"
+	}
+]
+}
 
