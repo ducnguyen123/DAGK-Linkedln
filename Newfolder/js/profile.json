@@ -1,18 +1,19 @@
 {"Test": [
 	{
-		"Name": "Current",
-		"Status": "Linkedln,Intut,DonorsChoose"
+		"Name": "Job",
+		"Status": "Student"
 	},
 	{
-		"Name": "Current",
-		"Status": "Linkedln,Intut,"
+		"Name": "Nation",
+		"Status": "Vietnam"
 	},
 	{
-		"Name": "Current",
-		"Status": "Linkedln,Intut,DonorsChoose"
+		"Name": "Major",
+		"Status": "Software Engineering"
+	},
+	{
+		"Name": "Education",
+		"Status": "University of Science"
 	}
 ] }
 
-{ "Summary":[ "Present": "My name is Nguyen Minh Duc.Currently,ilearning at University of Science.My major is Software Engineering. <br> <br>"
-]
-}

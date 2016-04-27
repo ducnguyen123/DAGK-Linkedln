@@ -1,46 +1,176 @@
 <!DOCTYPE html>
-<html  ng-app="ProfileApp">
+<html  >
 	<head>
 		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 		<link href="css/default.css" rel="stylesheet" type="text/css" media="screen,print" />
 		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/controllers.js"></script>
+		<script type="text/css" src="css/font-awesome.min.cs"></script>
 	</head>
-	<body  ng-controller="Extra-info">
+	<body  >
 		<div id="wrapper" >
-			<div id="profile" ng-repeat="item in profile">
-				<section id="topcard" class="profile-topcard" >
+			<div id="profile" >
+				<div id="topcard" class="profile-topcard" >
 					<div class="profile-card vcard" >
 						<div class="profile-picture" >
 							<img src="images/avatar_html.png" alt="Avatar" width="200" height="200" />
 						</div>
-						<div class="profile-overview">
+						<div class="profile-overview"  >
 							<div class="profile-overview-content" >
 								<h1 id="name" class="fn"> Nguyen Minh Duc </h1>
 								<p class="headline title" > Student at University of Science </p>
-								<dl id="demographics" >
-									<dt>Location<dt>
+								  <dl id="demographics" >
+									
 									<dd class="descriptor adr" >
 										<span class="locality" > Di An </span>
 									</dd>
-									<dt>Industry<dt>
-									<dd class="descriptor adr" >Internet </dd>
+									
+									<dd class="industry" >Internet </dd>
 								</dl>
-								<div  class="extra-info" >
-								<li  >
-								<p>  </p>
-								<p>  </p>
-								
-								</li>
+								<div  class="extra-info" ng-controller="Extra-info" ng-app="ProfileApp">
+								<table>
+									<tr ng-repeat="item in profile">
+										<td> {{item.Name }}</td>
+										<td> &nbsp{{item.Status }}</td>
+									</tr>
+								</table>
 								</div>
 							</div>
 						</div>
 					</div>
-				</section>
-				<section id="summary" class="profile-section">
-					<h3 class="title">Summary </h3>
-					<p> {{item.Summary}} <p>
-				</section>
+				</div>
+				<div id="background" class="profile-background" >
+					<h4 class="nameBG">Background<h4>
+					<div id="background-summary-container" >
+						
+						<h3 class="title">Summary </h3>
+						<span> My name is Nguyen Minh Duc.Currently,i learning at University of Science.My major is Software Engineering. 
+						<br> 
+						<br> Experienced in community activities, programming.
+						<span>
+					</div>
+					<div id="background-experience-container" >
+						<h3 class="title-experience">Experience <h3>
+						<div id="experience-1111" >
+						<header>
+							<h5 class="experience-logo" > </h5>
+							<h4 class="position-experience">Commissioner<h4>
+							<h5 class="address-experience">University of Sience<h5>
+							<span class="experience-local-date" >
+							September 2013 - Present (2 year 9 months)
+							</span>
+						</header>
+						
+						<p class="description-experience-1111" >I have around 1 years at this location.
+						I have organized a number of activities for you and above demand. 
+						I regret the incident, what I have not done well in the period of work. 
+						I'm glad I had the interesting experience, learned a lot of things and have friends working together. </p>
+						</div>
+					</div>
+					<div id="background-skill-container" >
+						<div class="background-skill" >
+							<h3> Skill</h3>
+						</div>
+						<div class="item-skill" >
+							<h2>C#<h2/>
+							<div class="progress">
+								<div class="progress-bar progress-bar-success progress-bar-striped " role="progressbar"
+								aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+									
+								</div>
+							</div>
+							<h2>C/C++<h2/>
+							<div class="progress">
+								<div class="progress-bar progress-bar-info progress-bar-striped " role="progressbar"
+								aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+									
+								</div>
+							</div>
+							<h2>Android<h2/>
+							<div class="progress">
+								<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"
+									aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+								
+								</div>
+							</div>
+							<h2>HTML,CSS<h2/>
+							<div class="progress">
+								<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+									aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="background-education-container" >
+						<div class="background-education" >
+							<h3>Education</h3>
+							<div class="education-first" >	
+								<h5 class="education-logo" >
+								
+								</h5>
+								<header>
+									<h4 class="school"> Ly Thuong Kiet Primary School</h4>
+									<h5>
+										<span class="address"> Di An Town</span>
+									</h5>
+								</header>
+								<span class="education-date" >
+									 2001 
+									 - 2006 
+								</span>
+							</div>
+							<div class="education-second" >	
+								<h5 class="education-logo" >
+								
+								</h5>
+								<header>
+									<h4 class="school"> Di An Junior High School</h4>
+									<h5>
+										<span class="address"> Di An Town</span>
+									</h5>
+								</header>
+								<span class="education-date" >
+									 2006 
+									 - 2010 
+								</span>
+							</div>
+							<div class="education-third" >	
+								<h5 class="education-logo" >
+								
+								</h5>
+								<header>
+									<h4 class="school"> Di An High School</h4>
+									<h5>
+										<span class="address"> Di An Town</span>
+									</h5>
+								</header>
+								<span class="education-date" >
+									 2010 
+									 - 2013 
+								</span>
+							</div>
+							<div class="education-four" >	
+								<h5 class="education-logo" >
+								
+								</h5>
+								<header>
+									<h4 class="school"> University of Science</h4>
+									<h5>
+										<span class="address"> District 5</span>
+									</h5>
+								</header>
+								<span class="education-date" >
+									 2013 
+									- Present 
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
