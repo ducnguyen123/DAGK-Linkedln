@@ -19,8 +19,8 @@
 
 "Background": [
 	{
-		"Content1": "My name is Nguyen Minh Duc.Currently,i learning at University of Science.My major is Software Engineering.",
-		"Content2": "Experienced in community activities, programming."
+		"Content1": "My name is Nguyen Minh Duc.Currently,i learning at University of Science.My major is Software Engineering.Experienced in community activities, programming."
+		
 		
 	}
 ],
@@ -31,6 +31,38 @@
 		"loca": "Di An",
 		"industry": "Internet"
 	}
-]
+],
+"Experience": [
+	{
+		"Posittion": "Commissioner",
+		"Address": "Student at University of Science",
+		"Date": "September 2013 - Present (2 year 9 months)",
+		"Description": "I have around 1 years at this location. I have organized a number of activities for you and above demand. I regret the incident, what I have not done well in the period of work.I'm glad I had the interesting experience, learned a lot of things and have friends working together."
+	}
+],
+"Education": [
+	{
+		"PrimarySchool": "Ly Thuong Kiet Primary School",
+		"AddressPrimarySchool": "Di An Town",
+		"DatePrimarySchool": "2001 - 2006 ",
+		"JuniorHighSchool": "Di An Junior High School",
+		"AddressJuniorHighSchool": "Di An Town",
+		"DateJuniorHighSchool": "2006 - 2010 ",
+		"HighSchool": "Di An High School",
+		"AddressHighSchool": "Di An Town",
+		"DateHighSchool": "2010 - 2013 ",
+		"University": "University of Science",
+		"AddressUniversity": "District 5,Ho Chi Minh City",
+		"DateUniversity": "2013 - Present "
+	}
+],
+"Project": [
+		{
+			"Img": "present.jpg",
+			"P": "Present"
+
+		}
+	]
+
 }
 

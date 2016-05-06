@@ -8,6 +8,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/controllers.js"></script>
+		<script type="text/javascript" src="js/experience.js"></script>
 		<script type="text/css" src="css/font-awesome.min.cs"></script>
 	</head>
 	<body  ng-controller="Extra-info" ng-app="ProfileApp" >
@@ -22,29 +23,27 @@
 						</div>
 						<div class="profile-overview"  >
 							<div class="profile-overview-content" ng-repeat="inf in info">
-								<button class="btnProfile" ng-show="true" ng-click="myFunc()">
-									 Edit</i>
-								</button>
-								
+								<button class="btnProfile" ng-show="true" ng-click="myFunc()"> Edit </button>
+									
 								<h1 id="name" class="fn" ng-bind="inf.name"> {{inf.name}} 
 									
 								</h1>
-								<input type="text" ng-show="editProfile" ng-model="inf.name" ></input>
+								<input type="text" ng-show="editProfile" ng-model="inf.name" />
 								
 								<p class="headline title" ng-bind="inf.school"> {{inf.school}} </p>
-								<input type="text" ng-show="editProfile" ng-model="inf.school" ></input>
+								<input type="text" ng-show="editProfile" ng-model="inf.school" />
 							
 								  <dl id="demographics" >
 									
 									<dd class="descriptor adr" >
 										<span class="locality" > {{inf.loca}} </span> <br>
 										
-										<input type="text" ng-show="editProfile" ng-model="inf.loca" ></input>
+										<input type="text" ng-show="editProfile" ng-model="inf.loca" />
 									</dd>
 									
 									<dd class="industry" ng-bind="inf.industry"> {{inf.industry}} </dd>
-									<input type="text" ng-show="editProfile" ng-model="inf.industry" ></input>
-									<input type="text" ng-show="false" ng-model="name" ></input>
+									<input type="text" ng-show="editProfile" ng-model="inf.industry" />
+									
 								</dl>
 								<div  class="extra-info" >
 								
@@ -58,59 +57,66 @@
 									<button class="btnProfile" ng-click="mySave()" ng-show="editProfile">Save</button>
 								</table>
 								
-								</div>
-								
+								</div>							
 							</div>
 						</div>
 					</div>
 				</div>
 				<div id="background" class="profile-background" >
-				<button class="btnProfile" ng-show="true" ng-click="myFuncBG()">
-									 Edit</i>
-								</button>
+					<button class="btnProfile" ng-show="true" ng-click="myFuncBG()"> Edit </button>
+									 
+								
 					<h4 class="nameBG">Background<h4>
 					
 					<div id="background-summary-container" ng-repeat="bgs in background">
 						
 						<h3 class="title" >Summary </h3>
 						
-						<span class="bgs" ng-bind="bgs.Content1 + bgs.Content2">  {{bgs.Content1}}
+						<span class="bgs" ng-bind="bgs.Content1">  {{bgs.Content1}}
 						<br> 
-						 {{bgs.Content2}}
-						<span> <br>
-						<input type="text" ng-show="editBG" ng-model="bgs.Content1 + bgs.Content2" ></input>
+
+						</span> <br>
 						
+						
+						<input type="text" ng-show="editBG" ng-model="bgs.Content1" />
+						<button class="btnProfile" ng-click="mySave()" ng-show="editBG">Save</button>
 					</div>
 					
-					<div id="background-experience-container">
-						<h3 class="title-experience">Experience <h3>
+					<div id="background-experience-container"  ng-repeat="ToT in expp">
+						<button class="btnProfile" ng-show="true" ng-click="myFuncE()"> Edit </button>
+						<h3 class="title-experience">Experience </h3>
 						<div id="experience-1111" >
-						<header>
+						<header >
 							<h5 class="experience-logo" >  </h5>
-							<h4 class="position-experience"> Commissioner <h4>
-							<h5 class="address-experience">Student at University of Science <h5>
+							<h4 class="position-experience" ng-bind="ToT.Posittion"> {{ToT.Posittion}} </h4>
+							<input type="text" ng-show="editE" ng-model="ToT.Posittion" />
+							<h5 class="address-experience"> {{ToT.Address}} </h5>
+							<input type="text" ng-show="editE" ng-model="ToT.Address" />
 							<span class="experience-local-date" >
-							September 2013 - Present (2 year 9 months)
+							{{ToT.Date}}
 							</span>
+							<input type="text" ng-show="editE" ng-model="ToT.Date" />
 						</header>
 						
-						<p class="description-experience-1111" > I have around 1 years at this location.
-						I have organized a number of activities for you and above demand.
-						I regret the incident, what I have not done well in the period of work.
-						I'm glad I had the interesting experience, learned a lot of things and have friends working together.</p>
+						<p class="description-experience-1111" > {{ToT.Description}}</p>
+							<input type="text" ng-show="editE" ng-model="ToT.Description" />
+							<button class="btnProfile" ng-click="mySave()" ng-show="editE">Save</button>
 						</div>
+
 					</div>
-					<div id="background-project-container" >
+					<div id="background-project-container" ng-repeat="PJ in pj">
+						<button class="btnProfile" ng-show="true" ng-click="myFuncP()"> Edit </button>
 						<h3 >Project <h3>
 						<div id="project-1111" >
 						
 							<div class="project-img1">
 							
-							<img src="images/present.jpg" alt="Present" style="width: 200px;height: 200px;" ></img>
-							<p style="font-size:40px;font-weight: bold;">Present</p>
-							
-							
-												
+							<img src="images/{{PJ.Img}}" alt="Present" style="width: 200px;height: 200px;" ng-bind="PJ.Img"/>
+								<input type="text" ng-show="editP" ng-model="PJ.Img" />
+							<p style="font-size:40px;font-weight: bold;" ng-bind="PJ.P"> {{PJ.P}}</p>
+
+								<input type="text" ng-show="editP" ng-model="PJ.P" />
+								<button class="btnProfile" ng-click="mySave()" ng-show="editP">Save</button>
 						</div>
 					</div>
 					<div id="background-skill-container" >
@@ -118,28 +124,28 @@
 							<h3> Skill</h3>
 						</div>
 						<div class="item-skill" >
-							<h2>C#<h2/>
+							<h2>C#</h2>
 							<div class="progress">
 								<div class="progress-bar progress-bar-success progress-bar-striped " role="progressbar"
 								aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
 									
 								</div>
 							</div>
-							<h2>C/C++<h2/>
+							<h2>C/C++</h2>
 							<div class="progress">
 								<div class="progress-bar progress-bar-info progress-bar-striped " role="progressbar"
 								aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
 									
 								</div>
 							</div>
-							<h2>Android<h2/>
+							<h2>Android</h2>
 							<div class="progress">
 								<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"
 									aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
 								
 								</div>
 							</div>
-							<h2>HTML,CSS<h2/>
+							<h2>HTML,CSS</h2>
 							<div class="progress">
 								<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
 									aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
@@ -148,68 +154,87 @@
 							</div>
 						</div>
 					</div>
-					<div id="background-education-container" >
+					<div id="background-education-container" ng-repeat="P in edu">
 						<div class="background-education" >
 							<h3>Education</h3>
-							<div class="education-first" >	
+							<div class="education-first" >
+								<button class="btnProfile" ng-show="true" ng-click="myFuncEd()"> Edit </button>
 								<h5 class="education-logo" >
 								
 								</h5>
 								<header>
-									<h4 class="school"> Ly Thuong Kiet Primary School</h4>
+									<h4 class="school" ng-bind="P.PrimarySchool"> {{P.PrimarySchool}}</h4>
+									<input type="text" ng-show="editEd" ng-model="P.PrimarySchool" />
 									<h5>
-										<span class="address"> Di An Town</span>
+										<span class="address" ng-bind="P.AddressPrimarySchool"> {{P.AddressPrimarySchool}}</span>
+										<input type="text" ng-show="editEd" ng-model="P.AddressPrimarySchool" />
 									</h5>
 								</header>
-								<span class="education-date" >
-									 2001 
-									 - 2006 
+								<span class="education-date" ng-bind="P.DatePrimarySchool">
+									  {{P.DatePrimarySchool}}
+
+
 								</span>
+								<button class="btnProfile" ng-click="mySave()" ng-show="editEd">Save</button>
+								<input type="text" ng-show="editEd" ng-model="P.DatePrimarySchool" />
+
 							</div>
-							<div class="education-second" >	
+							<div class="education-second" >
+								<button class="btnProfile" ng-show="true" ng-click="myFuncEd2()"> Edit </button>
 								<h5 class="education-logo" >
 								
 								</h5>
 								<header>
-									<h4 class="school"> Di An Junior High School</h4>
+									<h4 class="school" ng-bind="P.JuniorHighSchool"> {{P.JuniorHighSchool}}</h4>
+									<input type="text" ng-show="editEd2" ng-model="P.JuniorHighSchool" />
 									<h5>
-										<span class="address"> Di An Town</span>
+										<span class="address" ng-bind="P.AddressJuniorHighSchool"> {{P.AddressJuniorHighSchool}}</span>
+										<input type="text" ng-show="editEd2" ng-model="P.AddressJuniorHighSchool" />
 									</h5>
 								</header>
-								<span class="education-date" >
-									 2006 
-									 - 2010 
+								<span class="education-date" ng-bind="P.DateJuniorHighSchool">
+									 {{P.DateJuniorHighSchool}}
 								</span>
+								<button class="btnProfile" ng-click="mySave()" ng-show="editEd2">Save</button>
+								<input type="text" ng-show="editEd2" ng-model="P.DateJuniorHighSchool" />
 							</div>
-							<div class="education-third" >	
+							<div class="education-third" >
+								<button class="btnProfile" ng-show="true" ng-click="myFuncEd3()"> Edit </button>
 								<h5 class="education-logo" >
 								
 								</h5>
 								<header>
-									<h4 class="school"> Di An High School</h4>
+									<h4 class="school" ng-bind="P.HighSchool">{{P.HighSchool}} </h4>
+									<input type="text" ng-show="editEd3" ng-model="P.HighSchool" />
 									<h5>
-										<span class="address"> Di An Town</span>
+										<span class="address" ng-bind="P.AddressHighSchool"> {{P.AddressHighSchool}}</span>
+										<input type="text" ng-show="editEd3" ng-model="P.AddressHighSchool" />
 									</h5>
 								</header>
-								<span class="education-date" >
-									 2010 
-									 - 2013 
+								<span class="education-date" ng-bind="P.DateHighSchool">
+									{{P.DateHighSchool}}
 								</span>
+								<button class="btnProfile" ng-click="mySave()" ng-show="editEd3">Save</button>
+								<input type="text" ng-show="editEd3" ng-model="P.DateHighSchool" />
 							</div>
-							<div class="education-four" >	
+							<div class="education-four" >
+								<button class="btnProfile" ng-show="true" ng-click="myFuncEd4()"> Edit </button>
 								<h5 class="education-logo" >
 								
 								</h5>
 								<header>
-									<h4 class="school"> University of Science</h4>
+									<h4 class="school" ng-bind="P.University"> {{P.University}}</h4>
+									<input type="text" ng-show="editEd4" ng-model="P.University" />
 									<h5>
-										<span class="address"> District 5</span>
+										<span class="address" ng-bind="P.AddressUniversity"> {{P.AddressUniversity}}</span>
+										<input type="text" ng-show="editEd4" ng-model="P.AddressUniversity" />
 									</h5>
 								</header>
-								<span class="education-date" >
-									 2013 
-									- Present 
+								<span class="education-date" ng-bind="P.DateUniversity">
+									{{P.DateUniversity}}
 								</span>
+								<button class="btnProfile" ng-click="mySave()" ng-show="editEd4">Save</button>
+								<input type="text" ng-show="editEd4" ng-model="P.DateUniversity" />
 							</div>
 						</div>
 					</div>
