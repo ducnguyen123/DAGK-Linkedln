@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="js/controllers.js"></script>
 		<script type="text/css" src="css/font-awesome.min.cs"></script>
 	</head>
-	<body  ng-controller="Extra-info" ng-app="ProfileApp"
+	<body  ng-controller="Extra-info" ng-app="ProfileApp" >
 	
 	
 		<div id="wrapper" >
@@ -22,39 +22,67 @@
 						</div>
 						<div class="profile-overview"  >
 							<div class="profile-overview-content" ng-repeat="inf in info">
-								<h1 id="name" class="fn"> {{inf.name}} </h1>
-								<p class="headline title" > {{inf.school}} </p>
+								<button class="btnProfile" ng-show="true" ng-click="myFunc()">
+									 Edit</i>
+								</button>
+								
+								<h1 id="name" class="fn" ng-bind="inf.name"> {{inf.name}} 
+									
+								</h1>
+								<input type="text" ng-show="editProfile" ng-model="inf.name" ></input>
+								
+								<p class="headline title" ng-bind="inf.school"> {{inf.school}} </p>
+								<input type="text" ng-show="editProfile" ng-model="inf.school" ></input>
+							
 								  <dl id="demographics" >
 									
 									<dd class="descriptor adr" >
-										<span class="locality" > {{inf.loca}} </span>
+										<span class="locality" > {{inf.loca}} </span> <br>
+										
+										<input type="text" ng-show="editProfile" ng-model="inf.loca" ></input>
 									</dd>
 									
-									<dd class="industry" > {{inf.industry}} </dd>
+									<dd class="industry" ng-bind="inf.industry"> {{inf.industry}} </dd>
+									<input type="text" ng-show="editProfile" ng-model="inf.industry" ></input>
+									<input type="text" ng-show="false" ng-model="name" ></input>
 								</dl>
 								<div  class="extra-info" >
+								
 								<table>
 									<tr ng-repeat="item in profile">
-										<td> {{item.Name }}</td>
-										<td> &nbsp{{item.Status }}</td>
+										<td ng-bind="item.Name"> {{item.Name }}</td>
+										
+										<td > &nbsp{{item.Status }}</td>
+										
 									</tr>
+									<button class="btnProfile" ng-click="mySave()" ng-show="editProfile">Save</button>
 								</table>
+								
 								</div>
+								
 							</div>
 						</div>
 					</div>
 				</div>
 				<div id="background" class="profile-background" >
+				<button class="btnProfile" ng-show="true" ng-click="myFuncBG()">
+									 Edit</i>
+								</button>
 					<h4 class="nameBG">Background<h4>
+					
 					<div id="background-summary-container" ng-repeat="bgs in background">
 						
 						<h3 class="title" >Summary </h3>
-						<span class="bgs">  {{bgs.Content1}}
+						
+						<span class="bgs" ng-bind="bgs.Content1 + bgs.Content2">  {{bgs.Content1}}
 						<br> 
-						<br> {{bgs.Content2}}
-						<span>
+						 {{bgs.Content2}}
+						<span> <br>
+						<input type="text" ng-show="editBG" ng-model="bgs.Content1 + bgs.Content2" ></input>
+						
 					</div>
-					<div id="background-experience-container" ng-repeat="bgs in background">
+					
+					<div id="background-experience-container">
 						<h3 class="title-experience">Experience <h3>
 						<div id="experience-1111" >
 						<header>
@@ -187,6 +215,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 	</body>
 </html>

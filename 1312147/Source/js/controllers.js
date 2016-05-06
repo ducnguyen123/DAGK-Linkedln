@@ -6,7 +6,19 @@ nameSpace.controller('Extra-info',['$scope','$http', function($scope, $http)
 				$scope.profile = res.Test;
 				$scope.background = res.Background;
 				$scope.info = res.Info;
-				$scope.Exp = res.Experience;
+				$scope.myFunc = function(){
+					$scope.editProfile = true;
+					  
+				}
+				
+				$scope.mySave = function() {
+					$scope.editProfile = false;
+				}
+				
+				$scope.myFuncBG = function(){
+					$scope.editBG = true;
+					  
+				}
 			}); 
 
 		}]

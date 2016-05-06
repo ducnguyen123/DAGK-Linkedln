@@ -136,8 +136,9 @@
 	border-bottom: 1px solid;
 }
 
-#background-project-container {
-	border-bottom: 1px solid;
+.btnProfile {
+	float:right;
+	
 }
 
 #background-summary-container{
@@ -151,3 +152,4 @@
 #background-skill-container {
 	border-bottom: 1px solid ;
 }
+
